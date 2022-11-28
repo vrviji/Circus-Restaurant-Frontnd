@@ -1,0 +1,65 @@
+.navbar-light {
+    background-color: #3B0556;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+
+.imagestyle {
+    width: 100px;
+    height: 70px;
+    margin-top: -5%;
+    margin-bottom: -5%;
+    margin-left: 20px;
+}
+
+footer {
+    font-style: normal;
+    height: 15px;
+    bottom: 0%;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    background-color: #AF9EB5;
+    display: block;
+    position: absolute;
+    font-size: 10px;
+}
+
+
+.nav-item a:hover
+{
+    background-color: #E7CEF3;
+    color: black!important;
+}
+.nav-item a.active
+{
+    background-color: #E7CEF3;
+    color: white;
+}
+/*  circus booking CSS by Viji starts here*/
+
+#topimage{
+    width: 100%;
+    height: 200px;
+    margin-top: 6%;
+}
+#showimg{
+    margin-right: 370px ;
+    height: 200px;
+    width: 15%;
+} 
+
+.circush4{
+    background-color: #9F2B68;
+    color: aliceblue;
+}
+.circusbt:hover{
+    background-color:#a46ebd !important;
+
+}
+/*  circus booking CSS by Viji Ends here*/

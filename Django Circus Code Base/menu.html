@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="StyleSheet" href="css/customstyles.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <style>
+        .input-group {
+            width: 100px;
+        }
+
+        .add {
+            width: 110px;
+            height: 30px;
+            text-align: left;
+            font-size: 12px;
+            padding-left: 0%;
+            width: 150px;
+        }
+
+        .card {
+            width: 10rem;
+        }
+
+        .Heading {
+            color: #3D0060;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 30%;
+        }
+
+        td,
+        th {
+            border: 1px solid #E7CEF3;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #E7CEF3;
+        }
+
+        h2 {
+            color: #3D0060;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="#"><img src="images/Logo 1.png" class="imagestyle"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end textcolor" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="welcome.html">Welcome</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="reserve.html">Reserve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="circusbooking.html">Circus Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li id="cartmenu" class="nav-item">
+                        <a class="nav-link" href="#">View Cart</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container" style="margin-top: 100px;
+          margin-left: 50px;">
+
+        <table id="carttable" style="float:right; margin-top: 6%">
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><b>Total Price</b></td>
+                    <td id="totprice"><b>0</b></td>
+                </tr>
+            </tfoot>
+            <a href="Order.html"><button id="order" type="button" class="btn btn-primary" style="float:right; margin-top: 40%">Proceed to Order</button></a>
+        </table>
+    </div>
+    <!--Burger Section-->
+
+    <div class="container" style="margin-top: 50px;
+     margin-left: 50px; width: fit-content;">
+        <h2>Menu</h2>
+        <p class="Heading"><em><b>Burger Choices</b></em></p>
+        <div class="row max-width">
+            <div class="col-lg-4 col-sm-6">
+
+                <div class="card">
+                    <img src="images/Halloumi Sandwich.png" class="card-img-top mx-auto" alt="Veg pizza" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct1" class="card-title">Halloumi Burger</h5>
+                        <p id="cp1" value="100" class="card-text">100 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty1" min="1" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" style="width:10px ;" />
+                        </div>
+                        <button id="addcart1" onclick="addcart(1)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/dbl hallu.png" class="card-img-top mx-auto" alt="Pepperoni" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct2" class="card-title">Dbl Halloumi Pro</h5>
+                        <p id="cp2" value="150" class="card-text">150 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty2" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart2" onclick="addcart(2)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/cheese (1).png" class="card-img-top mx-auto" alt="chickentaco" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct3" class="card-title"> Cheese Burger </h5>
+                        <p id="cp3" value="50" class="card-text"> 50 SEK </p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty3" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart3" onclick="addcart(3)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4">
+                <div class="card">
+                    <img src="images/chicken.png" class="card-img-top mx-auto" alt="beefpizza" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct4" class="card-title">Chicken Pizza</h5>
+                        <p id="cp4" value="120" class="card-text">120 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty4" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart4" onclick="addcart(4)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="card">
+                    <img src="images/Burgers.jpg" class="card-img-top mx-auto" alt="minipizza" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct5" class="card-title">Ham Burger</h5>
+                        <p id="cp5" value="80" class="card-text">80 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty5" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart5" onclick="addcart(5)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pizza Section-->
+    <hr />
+    <p class="Heading"><em><b>Pizza Choices</b></em></p>
+    <div class="container" style="margin-top: 40px;
+    margin-left: 50px; width: fit-content;">
+        <div class="row max-width">
+            <div class="col-lg-4 col-sm-6">
+
+                <div class="card">
+                    <img src="images/veg.jpg" class="card-img-top mx-auto" alt="Veg pizza" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct6" class="card-title">Veg Pizza</h5>
+                        <p id="cp6" value="120" class="card-text">120 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty6" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart6" onclick="addcart(6)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/pepperoni.jpg" class="card-img-top mx-auto" alt="Pepperoni" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct7" class="card-title">Pepperoni</h5>
+                        <p id="cp7" value="150" class="card-text">150 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty7" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart7" onclick="addcart(7)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/chicken taco.jpg" class="card-img-top mx-auto" alt="chickentaco" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct8" class="card-title"> Chicken Taco </h5>
+                        <p id="cp8" value="200" class="card-text"> 200 SEK </p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty8" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart8" onclick="addcart(8)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4">
+                <div class="card">
+                    <img src="images/Beef.png" class="card-img-top mx-auto" alt="beefpizza" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct9" class="card-title">Beef Pizza</h5>
+                        <p id="cp9" value="180" class="card-text">180 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty9" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart9" onclick="addcart(9)" class="btn btn-success btn-xs btn-block add"> ADD TO
+                            CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="card">
+                    <img src="images/minipizza.jpg" class="card-img-top mx-auto" alt="minipizza" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct10" class="card-title">Mini Pizzas</h5>
+                        <p id="cp10" value="80" class="card-text">80 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty10" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart10" onclick="addcart(10)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Beverage Section-->
+    <hr />
+    <p class="Heading"><em><b>Beverages</b></em></p>
+    <div class="container" style="margin-top: 40px;
+    margin-left: 50px; width: fit-content;">
+        <div class="row max-width">
+            <div class="col-lg-4 col-sm-6">
+
+                <div class="card">
+                    <img src="images/coke.jpg" class="card-img-top mx-auto" alt="Coke" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct11" class="card-title">Coke</h5>
+                        <p id="cp11" value="20" class="card-text">20 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty11" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart11" onclick="addcart(11)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/fanta.png" class="card-img-top mx-auto" alt="fanta" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct12" class="card-title">Fanta</h5>
+                        <p id="cp12" value="20" class="card-text">20 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty12" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart12" onclick="addcart(12)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/minapp.jpg" class="card-img-top mx-auto" alt="salad" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct13" class="card-title"> Apple Juice </h5>
+                        <p id="cp13" value="30" class="card-text"> 30 SEK </p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty13" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart13" onclick="addcart(13)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4">
+                <div class="card">
+                    <img src="images/venilla.jpg" class="card-img-top mx-auto" alt="venilla" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct14" class="card-title">Vannila Milkshake</h5>
+                        <p id="cp14" value="100" class="card-text">100 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty14" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart14" onclick="addcart(14)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="card">
+                    <img src="images/chocalate.jpg" class="card-img-top mx-auto" alt="chocalate" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct15" class="card-title">Chocalte Milkshake</h5>
+                        <p id="cp15" value="100" class="card-text">100 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty15" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart15" onclick="addcart(15)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Salad Section-->
+    <hr />
+    <p class="Heading"><em><b>Salad Choices</b></em></p>
+    <div class="container" style="margin-top: 40px;
+        margin-left: 50px; width: 919.85px;">
+        <div class="row max-width">
+            <div class="col-lg-4 col-sm-6">
+
+                <div class="card">
+                    <img src="images/mexican.png" class="card-img-top mx-auto" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct16" class="card-title">Mexican Salad</h5>
+                        <p id="cp16" value="150" class="card-text">150 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty16" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart16" onclick="addcart(16)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/greek-salad.png" class="card-img-top mx-auto" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct17" class="card-title">Greek Salad</h5>
+                        <p id="cp17" value="180" class="card-text">180 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty17" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart17" onclick="addcart(17)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="card">
+                    <img src="images/veg.png" class="card-img-top mx-auto" alt="salad" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct18" class="card-title"> Vegetable Salad </h5>
+                        <p id="cp18" value="100" class="card-text"> 100 SEK </p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty18" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart18" onclick="addcart(18)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4">
+                <div class="card">
+                    <img src="images/grilled chicken.png" class="card-img-top mx-auto" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct19" class="card-title">Grilled Chicken</h5>
+                        <p id="cp19" value="200" class="card-text">200 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty19" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart19" onclick="addcart(19)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="card">
+                    <img src="images/caesar-salad.png" class="card-img-top mx-auto" alt="chocalate" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct20" class="card-title">Caeser Salad</h5>
+                        <p id="cp20" value="140" class="card-text">140 SEK</p>
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty20" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart20" onclick="addcart(20)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div class="card">
+                    <img src="images/tuna.png" class="card-img-top mx-auto" class="rounded"
+                        style="height:170px; width:120px">
+                    <div class="card-block">
+                        <h5 id="ct21" class="card-title">Tuna Salad</h5>
+                        <p id="cp21" value="180" class="card-text">180 SEK</p>
+
+                    </div>
+                    <div class="bottom d-flex flex-row justify-content-left">
+                        <div class="input-group mb-2">
+                            <input id="qty21" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" />
+                        </div>
+                        <button id="addcart21" onclick="addcart(21)" class="btn btn-success btn-xs btn-block add"> ADD
+                            TO CART
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="drinkmenu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+<footer>
+    <p><em>Copy rights &copy; 2022 - Django Restaurant</em></p>
+</footer>
+
+</html>

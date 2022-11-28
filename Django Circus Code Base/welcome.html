@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="http://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+
+
+      <link rel="StyleSheet" href="css/customstyles.css">
+  
+    <style>
+ 
+    .bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+} 
+
+  .carousel .carousel-inner{
+height:50%;
+width:100%
+}
+.carousel-inner .carousel-item img{
+min-height:50%;
+object-fit:cover
+}
+    </style>
+
+    <title>Welcome</title>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#"><img src="images/Logo 1.png" class="imagestyle"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end textcolor" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="welcome.html">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="reserve.html">Reserve</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="circusbooking.html">Circus Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+            <!--Start of carousel-->
+        <div class="container">
+            <h3 style="padding:20px;  background-color:thistle" >A restaurant with a circus performance on Fridays and Saturdays.  We have your favorite selection of delicious foods, burgers, pizzas with alcoholic and non alcoholic drinks too.</h3>
+            <blockquote style="background-color:floralwhite"> "The circus is the only ageless delight that you can buy for money."
+
+                <h5> -Ernest Hemingway.</h5> 
+        
+                </blockquote>
+                
+       
+            
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+          
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+          
+                <div class="item active">
+                  <img src="./images/group1.jpg" alt="Los Angeles" class="d-block" style="width:100%; ">
+                  <div class="carousel-caption">
+                    <h1 style=" color: hwb(88 0% 0%)">This Week's Performance</h1>
+                    <a href="./circusbooking.html">
+                      <h4 style="color: hwb(88 0% 0%)">Face First Group! Limited seats...Book your Tickets!!</h4></a>
+                  </div>
+                </div>
+          
+                <div class="item" height ="50%">
+                  <img src="./images/group2.jpg" alt="Chicago" class="d-block" style="width:100%;">
+                  <div class="carousel-caption">
+                    <h1 style=" color: hwb(88 0% 0%)">Next Week's Performance</h1>
+                    <a href="./circusbooking.html">
+                      <h4 style="color: hwb(88 0% 0%)">After Clap Group! Limited seats...Book your Tickets!!</h4></a>
+                  </div>
+                </div>
+              
+                <div class="item" height ="50%">
+                  <img src="./images/group3.jpg" alt="New York" class="d-block" style="width:100%;">
+                  <div class="carousel-caption">
+                    <h1 style=" color: hwb(88 0% 0%)">Later in this month</h1>
+                    <a href="./circusbooking.html">
+                      <h4 style="color: hwb(88 0% 0%)">Below Zero Group! Limited seats...Book your Tickets!!</h4></a>
+                  </div>
+                </div>
+            
+              </div>
+          
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <!--Enf of carousel-->
+    
+          <br>
+        </main>
+
+</body>
+<footer>
+    <p><em>Copy rights &copy; 2022 - Django Restaurant</em></p>
+</footer>
+
+</html>
